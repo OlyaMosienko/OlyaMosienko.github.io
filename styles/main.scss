@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap');
+
+$font: 'Onest', sans-serif;
+
+$dark: #202326;
+$accent: #2D1AA7;
+$white: #F8F8FA;
+$grey: #F1F1F3;
+
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_desk: 1000px; // 1024
+$r_desk_1150: 1150px;
+$r_desk_hd: 1200px; // 1280
+$r_desk_wxga: 1340px; // 1366
+$r_desk_wxga_xxl: 1500px;
+$r_desk_full: 1600px;
+$r_desk_full_over: 1680px;
+$r_desk_fhd: 1770px; // 1920
+
+html {
+    font-size: 10px;
+}
+body {
+    background-color: $white;
+    font: 400 1.4rem/1.4 $font;
+    color: $dark;
+    overflow-x: hidden;
+    margin: 0;
+}
+.container {
+    max-width: 280px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 0 0 0;
+    &_desc {
+        display: none;
+    }
+    &__logo {
+        text-decoration: none;
+        width: 104px;
+        height: 12.9px;
+    }
+    &__burger {
+        border: none;
+        background-color: transparent;
+        width: 20px;
+        height: 8px;
+        background-image: url(/img/burger.svg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+}
+.title {
+    font-size: 3.4rem;
+    font-weight: 600;
+    margin: 0;
+    &_medium {
+        font-size: 2.8rem;
+        font-weight: 500;
+    }
+    &_mini {
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+    &_min {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+    }
+}
+.banner {
+    margin-top: 4.71rem;
+    &__description {
+        margin-top: 1.1rem;
+        margin-bottom: 0;
+        line-height: 20px;
+    }
+    &__books {
+        margin-top: 2.1rem;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 1.6rem;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            height: .4rem;
+            background-color: #ECECF3;
+            border-radius: 1rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 1rem;
+            background-color: $accent;
+        }
+    }
+    &__img {
+        height: 33rem;
+    }
+}
+.quote {
+    margin-top: 5rem;
+    &__text {
+        font-size: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+        margin: 1.6rem 0 0 0;
+        &::before {
+            content: '';
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 38px;
+            height: 38px;
+            display: block;
+            background-image: url(/img/quote.svg);
+            background-size: contain;
+        }
+    }
+    &__author {
+        font-size: 1.5rem;
+        color: #777;
+        margin: 1.4rem 0 0 0;
+    }
+}
+.ad {
+    margin-top: 5rem;
+    background-color: $grey;
+    padding: 2rem 0 4.4rem 0;
+    &__img {
+        width: auto;
+        height: 20rem;
+        background-image: url(/img/ad.jpg);
+        background-size: contain;
+        background-position: 25% 20%;
+        background-repeat: no-repeat;
+    }
+    &__text {
+        font-size: 1.2rem;
+        margin: 1.8rem 0 0 0;
+    }
+}
+.conclusion {
+    margin-top: 3rem;
+    &__text {
+        margin: 1rem 0 0 0;
+        line-height: 1.5;
+    }
+}
+.feedback {
+    margin-top: 5rem;
+    background-color: $grey;
+    padding: 2.2rem 0 5rem 0;
+    &__form {
+        margin-top: 3rem;
+    }
+}
+.rating {
+    margin-top: 2.8rem;
+    &__box {
+        margin-top: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &__count {
+        font-size: 2.8rem;
+        font-weight: 500;
+    }
+    &__area {
+        display: inline-flex;
+        gap: 3px;
+        &:hover label svg {
+            fill: #FFB400;
+        }
+        & input {
+            position: absolute;
+            left: -9999px;
+            &:checked ~ label svg {
+                fill: #D7D7E2;
+            }
+            &:hover ~ label svg {
+                fill: #D7D7E2;
+            }
+        }
+        & label {
+            margin: 0;
+            cursor: pointer;
+            & svg {
+                height: 27px;
+                width: 27px;
+                fill: #FFB400;
+                transition: fill 0.3s;
+            }
+        }
+    }
+}
+.form {
+    margin-top: 1.5rem;
+    &__item {
+        margin-bottom: 2.2rem;
+    }
+    &__label {
+        font-size: 1.2rem;
+        opacity: .8;
+        display: block;
+        margin-bottom: 1.2rem;
+    }
+    &__input {
+        background: #FFF;
+        border-radius: 1rem;
+        border: 1px solid #EDEDF1;
+        font-size: 1.4rem;
+        color: $dark;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.7rem 1.5rem;
+        transition: .2s;
+        &::placeholder {
+            color: #777;
+        }
+        &:focus {
+            outline: none;
+            border: $accent;
+        }
+    }
+    &__btn {
+        border: none;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 10rem;
+        background-color: $accent;
+        color: #FFF;
+        font-size: 1.6rem;
+        cursor: pointer;
+        padding: 1rem 2rem 1.2rem;
+        margin-top: 1.8rem;
+    }
+}
+
+.drop {
+    display: block;
+    position: relative;
+    &__input {
+        display: none;
+        &:checked {
+            & ~ .drop__items {
+                opacity: 1;
+                max-height: 400px;
+            }
+            & ~ .drop__control{       
+                z-index:99;
+                background: $white;
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+            & ~ .overlay-close {
+                transform: none;
+                pointer-events: initial;
+            }
+        }
+    }
+    &__control {
+        color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 2.5rem 2.5rem 2.5rem 1.8rem;
+        background: $white;
+        transition: all .2s ease;
+        width: 100%;
+        box-sizing: border-box;
+        &:after {
+            content:"";
+            display: inline-block;      
+            height: 1.1rem;
+            width: 1.2rem;
+            background-image: url(/img/vector.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;      
+            transition: transform .2s ease;
+        }  
+    }
+    &__items {
+        position: absolute;
+        top: 100%;    
+        width: 100%;
+        padding: 0 2rem 1.7rem;
+        margin: 0;
+        transition: all .2s ease;    
+        background: $white;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        z-index: 99;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+    }
+    &__item {
+        list-style:none;
+        & a {        
+            display: block;
+            color: $white;
+            text-decoration: none;
+            transition: all .2s ease;
+            &:hover {
+                color: $white;
+            }     
+        }
+    }
+    & .drop__item + .drop__item {
+        margin-top: 1.7rem;
+    }
+    & .overlay-close {
+      position: fixed;    
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9;
+      transform: translate(100%,0);
+      pointer-events: none;
+    }
+}
