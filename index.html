@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/swiper-bundle.min.css">
     <link rel="stylesheet" href="/styles/main.css">
     <title>Путь JavaScript</title>
 </head>
@@ -53,8 +54,10 @@
     </section>
     <section class="ad">
         <div class="container">
-            <div class="ad__img"></div>
-            <p class="ad__text">Реклама на <a href="blabla.com" class="ad__link">blabla.com</a></p>
+            <div class="ad__box">
+                <div class="ad__img"></div>
+                <p class="ad__text">Реклама на <a href="blabla.com" class="ad__link">blabla.com</a></p>
+            </div>
         </div>
     </section>
     <section>
@@ -74,37 +77,31 @@
                     <div class="rating__box">
                         <span class="rating__count">4</span>
                         <div class="rating__area">
-                            <!-- по умолчанию 0 -->
-                            <input name="fst" value="0" type="radio" disabled checked />
-                            <!-- рейтинг 1 -->    
+                            <input name="fst" value="4" type="radio" disabled checked />
                             <label for="fst-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 25 23">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9653 19.4946C12.674 19.3415 12.326 19.3415 12.0347 19.4946L6.35837 22.4788C5.62474 22.8645 4.76731 22.2416 4.90742 21.4247L5.9915 15.104C6.04713 14.7796 5.93959 14.4486 5.7039 14.2189L1.11169 9.7426C0.51817 9.16406 0.845679 8.15609 1.6659 8.0369L8.01218 7.11473C8.33789 7.06741 8.61946 6.86284 8.76512 6.56769L11.6033 0.816987C11.9701 0.0737408 13.0299 0.0737399 13.3967 0.816986L16.2349 6.56769C16.3805 6.86284 16.6621 7.06741 16.9878 7.11473L23.3341 8.0369C24.1543 8.15609 24.4818 9.16406 23.8883 9.7426L19.2961 14.2189C19.0604 14.4486 18.9529 14.7796 19.0085 15.104L20.0926 21.4247C20.2327 22.2416 19.3753 22.8645 18.6416 22.4788L12.9653 19.4946Z"/>
                                 </svg>
                             </label>
                             <input name="fst" id="fst-1" value="1" type="radio" />
-                            <!-- рейтинг 2 -->    
                             <label for="fst-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 25 23">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9653 19.4946C12.674 19.3415 12.326 19.3415 12.0347 19.4946L6.35837 22.4788C5.62474 22.8645 4.76731 22.2416 4.90742 21.4247L5.9915 15.104C6.04713 14.7796 5.93959 14.4486 5.7039 14.2189L1.11169 9.7426C0.51817 9.16406 0.845679 8.15609 1.6659 8.0369L8.01218 7.11473C8.33789 7.06741 8.61946 6.86284 8.76512 6.56769L11.6033 0.816987C11.9701 0.0737408 13.0299 0.0737399 13.3967 0.816986L16.2349 6.56769C16.3805 6.86284 16.6621 7.06741 16.9878 7.11473L23.3341 8.0369C24.1543 8.15609 24.4818 9.16406 23.8883 9.7426L19.2961 14.2189C19.0604 14.4486 18.9529 14.7796 19.0085 15.104L20.0926 21.4247C20.2327 22.2416 19.3753 22.8645 18.6416 22.4788L12.9653 19.4946Z"/>
                                 </svg>
                             </label>
                             <input name="fst" id="fst-2" value="2" type="radio" />
-                            <!-- рейтинг 3 -->    
                             <label for="fst-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 25 23">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9653 19.4946C12.674 19.3415 12.326 19.3415 12.0347 19.4946L6.35837 22.4788C5.62474 22.8645 4.76731 22.2416 4.90742 21.4247L5.9915 15.104C6.04713 14.7796 5.93959 14.4486 5.7039 14.2189L1.11169 9.7426C0.51817 9.16406 0.845679 8.15609 1.6659 8.0369L8.01218 7.11473C8.33789 7.06741 8.61946 6.86284 8.76512 6.56769L11.6033 0.816987C11.9701 0.0737408 13.0299 0.0737399 13.3967 0.816986L16.2349 6.56769C16.3805 6.86284 16.6621 7.06741 16.9878 7.11473L23.3341 8.0369C24.1543 8.15609 24.4818 9.16406 23.8883 9.7426L19.2961 14.2189C19.0604 14.4486 18.9529 14.7796 19.0085 15.104L20.0926 21.4247C20.2327 22.2416 19.3753 22.8645 18.6416 22.4788L12.9653 19.4946Z"/>
                                 </svg>
                             </label>
-                            <input name="fst" id="fst-3" value="3" type="radio" />
-                            <!-- рейтинг 4 -->        
+                            <input name="fst" id="fst-3" value="3" type="radio" />      
                             <label for="fst-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 25 23">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9653 19.4946C12.674 19.3415 12.326 19.3415 12.0347 19.4946L6.35837 22.4788C5.62474 22.8645 4.76731 22.2416 4.90742 21.4247L5.9915 15.104C6.04713 14.7796 5.93959 14.4486 5.7039 14.2189L1.11169 9.7426C0.51817 9.16406 0.845679 8.15609 1.6659 8.0369L8.01218 7.11473C8.33789 7.06741 8.61946 6.86284 8.76512 6.56769L11.6033 0.816987C11.9701 0.0737408 13.0299 0.0737399 13.3967 0.816986L16.2349 6.56769C16.3805 6.86284 16.6621 7.06741 16.9878 7.11473L23.3341 8.0369C24.1543 8.15609 24.4818 9.16406 23.8883 9.7426L19.2961 14.2189C19.0604 14.4486 18.9529 14.7796 19.0085 15.104L20.0926 21.4247C20.2327 22.2416 19.3753 22.8645 18.6416 22.4788L12.9653 19.4946Z"/>
                                 </svg>
                             </label>
                             <input name="fst" id="fst-4" value="4" type="radio" />
-                            <!-- рейтинг 5 -->    
                             <label for="fst-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 25 23">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9653 19.4946C12.674 19.3415 12.326 19.3415 12.0347 19.4946L6.35837 22.4788C5.62474 22.8645 4.76731 22.2416 4.90742 21.4247L5.9915 15.104C6.04713 14.7796 5.93959 14.4486 5.7039 14.2189L1.11169 9.7426C0.51817 9.16406 0.845679 8.15609 1.6659 8.0369L8.01218 7.11473C8.33789 7.06741 8.61946 6.86284 8.76512 6.56769L11.6033 0.816987C11.9701 0.0737408 13.0299 0.0737399 13.3967 0.816986L16.2349 6.56769C16.3805 6.86284 16.6621 7.06741 16.9878 7.11473L23.3341 8.0369C24.1543 8.15609 24.4818 9.16406 23.8883 9.7426L19.2961 14.2189C19.0604 14.4486 18.9529 14.7796 19.0085 15.104L20.0926 21.4247C20.2327 22.2416 19.3753 22.8645 18.6416 22.4788L12.9653 19.4946Z"/>
@@ -120,9 +117,9 @@
                         <input type="text" placeholder="Имя" value="Александр" class="form__input">
                         <input type="text" placeholder="Email" class="form__input">
                         <div class="form__item">
-                            <label for="" class="form">Выберите книгу</label>
                             <label class="form__drop drop">
                                 <input class="drop__input" type="checkbox" id="target-drop">
+                                <span class="drop__control">Выберите книгу</span>
                                 <ul class="drop__items">
                                     <li class="drop__item">JavaScript ниндзя</li>
                                     <li class="drop__item">Pragmatic Guide to JavaScript</li>
@@ -139,5 +136,40 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <div class="posts">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__content">
+                                <img class="swiper-slide__thumb" src="/img/react.png" alt="ReactJS">
+                                <p class="swiper-slide__date">12 декабря</p>
+                                <h3 class="swiper-slide__title">События жизненного цикла ReactJS</h3>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__content">
+                                <img class="swiper-slide__thumb" src="/img/gridcss.png" alt="Grid CSS">
+                                <p class="swiper-slide__date">10 декабря</p>
+                                <h3 class="swiper-slide__title">CSS Grids. Полное руководство</h3>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide__content">
+                                <img class="swiper-slide__thumb" src="/img/js.png" alt="JS">
+                                <p class="swiper-slide__date">5 декабря</p>
+                                <h3 class="swiper-slide__title">Асинхронность в JavaScript</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/scripts/swiper-bundle.min.js"></script>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
