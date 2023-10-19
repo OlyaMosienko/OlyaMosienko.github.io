@@ -5,22 +5,14 @@ $font: 'Onest', sans-serif;
 $dark: #202326;
 $accent: #2D1AA7;
 $white: #F8F8FA;
-$grey: #F1F1F3;
+$light: #F1F1F3;
+$gray: #777;
 
 $r_minmob: 320px;
 $r_mob_360: 360px;
-$r_mob_400: 400px;
 $r_mob_500: 500px;
-$r_mob_600: 600px;
 $r_tab: 768px;
-$r_desk: 1000px; // 1024
-$r_desk_1150: 1150px;
-$r_desk_hd: 1200px; // 1280
-$r_desk_wxga: 1340px; // 1366
-$r_desk_wxga_xxl: 1500px;
-$r_desk_full: 1600px;
-$r_desk_full_over: 1680px;
-$r_desk_fhd: 1770px; // 1920
+$r_desk: 1024px;
 
 html {
     font-size: 10px;
@@ -45,8 +37,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.8rem 0 0 0;
+    &_mob {
+        @media (min-width: $r_tab) {
+            display: none;
+        }
+    }
     &_desc {
         display: none;
+        @media (min-width: $r_tab) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
     &__logo {
         text-decoration: none;
@@ -64,18 +65,101 @@ body {
         background-repeat: no-repeat;
         cursor: pointer;
     }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 3.5rem;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $dark;
+        transition: .3s;
+        &:hover {
+            color: $accent;
+        }
+        & span, & svg {
+            transition: .3s;
+        }
+        & span {
+            color: $dark;
+            &:hover {
+                color: $accent;
+            }
+        }
+        & svg {
+            stroke: $dark;
+        }
+        &:hover svg {
+            stroke: $accent;
+        }
+    }
+    &__drop {
+        & .drop__head {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        & .drop__items {
+            width: 197px;
+            top: 135%;
+        }
+        & .drop__item {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: $dark;
+        }
+        & .drop__input {
+            &:checked {
+                & ~ .drop__head svg {
+                    transform: rotate(180deg);
+                }
+                & ~ .drop__head span {
+                    color: $accent;
+                }
+            }
+        }
+    }
+    &__btn {
+        max-width: 14.5rem;
+        padding: 1.2rem !important;
+    }
+}
+
+.btn {
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10rem;
+    background-color: $accent;
+    color: #FFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 1.7rem;
+    box-shadow: none;
+    transition: .3s;
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 3px 3px 6px 0px;
+    }
 }
 
 .title {
-    font-size: 3.4rem;
+    font-size: clamp(3.4rem, 5vw, 5.2rem);
     font-weight: 600;
     margin: 0;
     &_medium {
-        font-size: 2.8rem;
+        font-size: clamp(2.8rem, 3vw, 4rem);
         font-weight: 500;
     }
     &_mini {
-        font-size: 2.2rem;
+        font-size: clamp(2.2rem, 2.5vw, 2.8rem);
         font-weight: 500;
     }
     &_min {
@@ -90,6 +174,18 @@ body {
         margin-top: 1.1rem;
         margin-bottom: 0;
         line-height: 20px;
+        &_mob {
+            @media (min-width: $r_tab) {
+                display: none;
+            }
+        }
+        &_desk {
+            display: none;
+            @media (min-width: $r_tab) {
+                display: block;
+                margin-top: 2rem;
+            }
+        }
     }
     &__books {
         margin-top: 2.1rem;
@@ -121,7 +217,7 @@ body {
 .quote {
     margin-top: 5rem;
     &__text {
-        font-size: 1.8rem;
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
         display: flex;
         flex-direction: column;
         gap: 1.7rem;
@@ -139,14 +235,17 @@ body {
     }
     &__author {
         font-size: 1.5rem;
-        color: #777;
+        color: $gray;
         margin: 1.4rem 0 0 0;
+        @media (min-width: $r_tab) {
+            font-size: 1.6rem;
+        }
     }
 }
 
 .ad {
     margin-top: 5rem;
-    background-color: $grey;
+    background-color: $light;
     padding: 2rem 0 4.4rem 0;
     &__box {
         margin: 0 auto;
@@ -174,12 +273,15 @@ body {
     &__text {
         margin: 1rem 0 0 0;
         line-height: 1.5;
+        @media (min-width: $r_tab) {
+            font-size: 1.6rem;
+        }
     }
 }
 
 .feedback {
     margin-top: 5rem;
-    background-color: $grey;
+    background-color: $light;
     padding: 2.2rem 0 5rem 0;
     &__form {
         margin-top: 3rem;
@@ -230,6 +332,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+    @media (min-width: $r_tab) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
     &__input, &__textarea {
         background: #FFF;
         border-radius: 1rem;
@@ -240,32 +346,47 @@ body {
         box-sizing: border-box;
         padding: 1.7rem 1.5rem;
         transition: .3s;
-        &::placeholder {
-            color: #777;
-        }
         &:focus {
             outline: none;
             border: 1px solid $accent;
         }
     }
+    &__inputbox {
+        position: relative;
+    }
+    &__input:focus, &__input:not(:focus):valid {
+        & ~ .form__placeholder {
+            font-size: .9rem;
+            transform: translateX(-10px) translateY(-10px);
+        }
+    }
+    &__placeholder {
+        color: $gray;
+        position: absolute;
+        display: inline-block;
+        font-size: 1.4rem;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: 1111;
+        transition: .3s;
+
+    }
     &__textarea {
         font-family: $font;
         resize: none;
         height: 20rem;
+        @media (min-width: $r_tab) {
+            grid-column: 1 / 4;
+        }
     }
     &__btn {
-        border: none;
-        box-sizing: border-box;
-        width: 100%;
-        border-radius: 10rem;
-        background-color: $accent;
-        color: #FFF;
-        font-size: 1.6rem;
-        cursor: pointer;
-        padding: 1.7rem;
         margin-top: 1.8rem;
+        @media (min-width: $r_tab) {
+            max-width: 13.3rem;
+        }
     }
 }
+
 .drop {
     display: block;
     position: relative;
@@ -290,7 +411,7 @@ body {
         }
     }
     &__control {
-        color: #777;
+        color: $gray;
         background: #FFF;
         border-radius: 1rem;
         border: 1px solid #EDEDF1;
@@ -339,7 +460,7 @@ body {
         transition: all .3s ease;
         cursor: pointer;
         &:hover {
-            background: $grey;
+            background: $light;
             border-left: 7px solid $accent;
         }     
     }
@@ -359,15 +480,26 @@ body {
     margin-top: 3rem;
 }
 .swiper {
+    margin-top: 1.8rem;
     margin-bottom: 6.6rem;
+    @media (min-width: $r_tab) {
+        margin-top: 3.2rem;
+    }
 }
 .swiper-wrapper {
     padding-bottom: 5rem;
+    @media (min-width: $r_tab) {
+        gap: 3rem;
+    }
 }
 .swiper-slide {
     &__content {
         margin: 0 auto;
         max-width: 280px;
+        @media (min-width: $r_mob_500) {
+            margin: 0;
+            max-width: 226px;
+        }
     }
     &__thumb {
         border-radius: 2rem;
@@ -375,7 +507,7 @@ body {
     }
     &__date {
         font-size: 1.2rem;
-        color: #777;
+        color: $gray;
         margin: 1.2rem 0 0 0;
     }
     &__title {
