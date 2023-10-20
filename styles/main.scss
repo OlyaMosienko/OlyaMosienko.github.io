@@ -62,7 +62,6 @@ body {
         height: 8px;
         background-image: url(/img/burger.svg);
         background-size: cover;
-        background-position: center center;
         background-repeat: no-repeat;
         cursor: pointer;
     }
@@ -84,6 +83,9 @@ body {
         transition: .3s;
         &:hover {
             color: $accent;
+            & svg {
+                stroke: $accent;
+            }
         }
         & span, & svg {
             transition: .3s;
@@ -96,9 +98,6 @@ body {
         }
         & svg {
             stroke: $dark;
-        }
-        &:hover svg {
-            stroke: $accent;
         }
     }
     &__drop {
@@ -132,6 +131,7 @@ body {
             &:checked {
                 & ~ .drop__head svg {
                     transform: rotate(180deg);
+                    stroke: $accent;
                 }
                 & ~ .drop__head span {
                     color: $accent;
@@ -184,8 +184,8 @@ body {
         font-weight: 500;
         letter-spacing: -0.22px;
         @media (min-width: $r_tab) {
-            letter-spacing: -0.56px;
             font-size: 2.8rem;
+            letter-spacing: -0.56px;
         }
     }
     &_min {
@@ -489,12 +489,6 @@ body {
         height: 14.5rem;
         padding: 1.4rem 0 0 1.4rem;
         position: relative;
-        &:focus, &:not(:focus):valid {
-            & ~ .form__placeholder {
-                font-size: .9rem;
-                transform: translateX(-10px) translateY(-10px);
-            }
-        }
         @media (min-width: $r_tab) {
             grid-column: 1 / 4;
         }
@@ -629,10 +623,10 @@ body {
         color: $gray;
         margin: .6rem 0 0 0;
     }
-    & h3 {
+    &__title {
         margin: 0.5rem 0 0 0;
     }
-    &__title {
+    &__titlelink {
         color: $dark;
         text-decoration: none;
         font-size: 1.6rem;

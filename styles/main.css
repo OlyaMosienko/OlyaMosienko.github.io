@@ -52,7 +52,6 @@ body {
   height: 8px;
   background-image: url(/img/burger.svg);
   background-size: cover;
-  background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -76,6 +75,9 @@ body {
 .header__link:hover {
   color: #2D1AA7;
 }
+.header__link:hover svg {
+  stroke: #2D1AA7;
+}
 .header__link span, .header__link svg {
   transition: 0.3s;
 }
@@ -87,9 +89,6 @@ body {
 }
 .header__link svg {
   stroke: #202326;
-}
-.header__link:hover svg {
-  stroke: #2D1AA7;
 }
 .header__drop .drop__head {
   display: flex;
@@ -119,6 +118,7 @@ body {
 }
 .header__drop .drop__input:checked ~ .drop__head svg {
   transform: rotate(180deg);
+  stroke: #2D1AA7;
 }
 .header__drop .drop__input:checked ~ .drop__head span {
   color: #2D1AA7;
@@ -174,8 +174,8 @@ body {
 }
 @media (min-width: 768px) {
   .title_mini {
-    letter-spacing: -0.56px;
     font-size: 2.8rem;
+    letter-spacing: -0.56px;
   }
 }
 .title_min {
@@ -515,10 +515,6 @@ body {
   padding: 1.4rem 0 0 1.4rem;
   position: relative;
 }
-.form__textarea:focus ~ .form__placeholder, .form__textarea:not(:focus):valid ~ .form__placeholder {
-  font-size: 0.9rem;
-  transform: translateX(-10px) translateY(-10px);
-}
 @media (min-width: 768px) {
   .form__textarea {
     grid-column: 1/4;
@@ -661,17 +657,17 @@ body {
   color: #777;
   margin: 0.6rem 0 0 0;
 }
-.swiper-slide h3 {
+.swiper-slide__title {
   margin: 0.5rem 0 0 0;
 }
-.swiper-slide__title {
+.swiper-slide__titlelink {
   color: #202326;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 500;
   transition: 0.3s;
 }
-.swiper-slide__title:hover {
+.swiper-slide__titlelink:hover {
   color: #2D1AA7;
 }
 
