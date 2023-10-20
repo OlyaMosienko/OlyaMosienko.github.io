@@ -171,7 +171,7 @@ body {
         letter-spacing: -1.04px;
     }
     &_medium {
-        font-size: clamp(2.8rem, 3.5vw, 4rem);
+        font-size: clamp(2.8rem, 4vw, 4rem);
         font-weight: 500;
         letter-spacing: -0.28px;
         line-height: 1.14;
@@ -288,10 +288,11 @@ body {
 
 .quote {
     margin-top: 5rem;
-    border-top: 2px solid #ECECF3;
-    padding-top: 2.5rem;
+    border-top: none;
     @media (min-width: $r_tab) {
         margin-top: 7.7rem;
+        border-top: 2px solid #ECECF3;
+        padding-top: 2.5rem;
     }
     &__text {
         font-size: clamp(1.8rem, 2vw, 2.2rem);
@@ -300,6 +301,7 @@ body {
         gap: 1.7rem;
         margin: 1.4rem 0 0 0;
         @media (min-width: $r_tab) {
+            font-size: 2.2rem;
             margin: 2.8rem 0 0 0;
             flex-direction: row;
             gap: 2rem;
@@ -486,15 +488,16 @@ body {
     &__textarea {
         font-family: $font;
         resize: none;
-        height: 14.5rem;
+        height: 19.5rem;
         padding: 1.4rem 0 0 1.4rem;
         position: relative;
         @media (min-width: $r_tab) {
             grid-column: 1 / 4;
+            height: 14.5rem;
         }
     }
     &__btn {
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         @media (min-width: $r_tab) {
             max-width: 13.3rem;
             margin-top: 2.3rem;
